@@ -14,115 +14,111 @@
             theme: {
               extend: {
                 "colors": {
-                        "on-secondary": "#402d00",
-                        "secondary": "#ffe2ab",
                         "background": "#10141a",
-                        "outline-variant": "#3b494c",
-                        "on-tertiary-fixed": "#00201d",
-                        "surface": "#10141a",
-                        "secondary-container": "#ffbf00",
-                        "on-tertiary": "#003732",
-                        "surface-container-highest": "#31353c",
-                        "secondary-fixed-dim": "#fbbc00",
+                        "surface": "#1c2026",
                         "primary": "#c3f5ff",
+                        "primary-container": "#00e5ff",
                         "on-background": "#dfe2eb",
                         "on-surface": "#dfe2eb",
-                        "inverse-primary": "#006875",
-                        "primary-fixed-dim": "#00daf3",
-                        "on-error-container": "#ffdad6",
-                        "error": "#ffb4ab",
-                        "on-secondary-fixed-variant": "#5c4300",
-                        "surface-container-low": "#181c22",
-                        "inverse-on-surface": "#2d3137",
-                        "tertiary": "#97fff1",
-                        "surface-container-high": "#262a31",
-                        "tertiary-fixed": "#61f9e9",
-                        "surface-container-lowest": "#0a0e14",
-                        "on-surface-variant": "#bac9cc",
-                        "surface-variant": "#31353c",
-                        "surface-container": "#1c2026",
-                        "error-container": "#93000a",
-                        "on-secondary-fixed": "#261a00",
-                        "on-tertiary-fixed-variant": "#005049",
-                        "on-primary": "#00363d",
-                        "on-primary-container": "#00626e",
-                        "on-tertiary-container": "#00645c",
-                        "surface-bright": "#353940",
-                        "inverse-surface": "#dfe2eb",
-                        "on-primary-fixed-variant": "#004f58",
-                        "on-error": "#690005",
-                        "outline": "#849396",
-                        "primary-fixed": "#9cf0ff",
-                        "secondary-fixed": "#ffdfa0",
-                        "surface-tint": "#00daf3",
-                        "on-primary-fixed": "#001f24",
-                        "on-secondary-container": "#6d5000",
-                        "tertiary-fixed-dim": "#3adccc",
-                        "primary-container": "#00e5ff",
-                        "surface-dim": "#10141a",
-                        "tertiary-container": "#4ae7d7"
-                },
-                "borderRadius": {
-                        "DEFAULT": "1rem",
-                        "lg": "2rem",
-                        "xl": "3rem",
-                        "full": "9999px"
+                        "on-surface-variant": "#bac9cc"
                 },
                 "fontFamily": {
                         "headline": ["Space Grotesk"],
-                        "body": ["Manrope"],
-                        "label": ["Space Grotesk"]
+                        "body": ["Manrope"]
                 }
               },
             },
           }
         </script>
     <style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
         .glass-card {
-            background: rgba(49, 53, 60, 0.1);
+            background: rgba(49, 53, 60, 0.2);
             backdrop-filter: blur(12px);
             border: 1px solid rgba(195, 245, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        .glass-card:hover {
+            border: 1px solid rgba(0, 229, 255, 0.4);
+            box-shadow: 0 0 20px rgba(0, 229, 255, 0.1);
         }
     </style>
 </head>
 <body class="bg-background text-on-background font-body">
 
-<nav class="fixed top-0 w-full z-50 bg-[#10141a]/80 backdrop-blur-xl shadow-2xl">
+<nav class="fixed top-0 w-full z-50 bg-[#10141a]/80 backdrop-blur-xl border-b border-white/5">
     <div class="flex justify-between items-center px-10 py-4 max-w-[1920px] mx-auto">
-        <div class="text-2xl font-black tracking-tighter text-[#c3f5ff] uppercase font-headline">專案紀錄首頁</div>
+        <div class="text-2xl font-black tracking-tighter text-[#c3f5ff] uppercase font-headline">工程專案紀錄</div>
         <div class="hidden md:flex items-center gap-8">
-            <a class="font-headline font-bold text-[#00e5ff]" href="#">技術概覽</a>
-            <a class="font-headline font-bold text-slate-400 hover:text-[#c3f5ff]" href="#">專案實績</a>
-            <a class="font-headline font-bold text-slate-400 hover:text-[#c3f5ff]" href="#">聯絡資訊</a>
+            <a class="font-headline font-bold text-[#00e5ff]" href="#">首頁</a>
+            <a class="font-headline font-bold text-slate-400 hover:text-[#c3f5ff]" href="#">設施展示</a>
+            <a class="font-headline font-bold text-slate-400 hover:text-[#c3f5ff]" href="#">專案紀錄</a>
         </div>
     </div>
 </nav>
 
 <main class="pt-24">
-    <section class="relative min-h-[600px] flex items-center px-8 md:px-20 overflow-hidden">
+    <section class="relative py-20 px-8 md:px-20 overflow-hidden">
         <div class="max-w-7xl mx-auto z-10">
-            <div class="space-y-8">
-                <h1 class="text-6xl md:text-8xl font-headline font-bold leading-none tracking-tighter text-on-surface uppercase">
+            <div class="space-y-6">
+                <div class="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs tracking-widest uppercase">
+                    <span class="relative flex h-2 w-2">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+                    </span>
+                    系統運行中 System Active
+                </div>
+                <h1 class="text-5xl md:text-7xl font-headline font-bold leading-tight text-on-surface uppercase">
                     歡迎來到我的網站
                 </h1>
-                <p class="text-2xl text-on-surface-variant max-w-2xl leading-relaxed font-body">
-                    這裡記錄了關於半導體廠房建設與專案管理的經驗。
+                <p class="text-xl text-on-surface-variant max-w-2xl leading-relaxed">
+                    這裡記錄了關於半導體廠房建設與專案管理的經驗，包含無塵室系統與大型空調動力設施。
                 </p>
-                <div class="flex flex-wrap gap-4">
-                    <button class="px-8 py-4 bg-primary-container text-on-primary-container rounded-full font-headline font-bold uppercase tracking-widest hover:shadow-[0_0_30px_rgba(0,229,255,0.4)] transition-all">
-                        查看更多內容
-                    </button>
+            </div>
+        </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-8 py-12">
+        <h2 class="text-3xl font-headline font-bold text-primary mb-10 uppercase tracking-tight border-l-4 border-primary pl-4">核心設施紀錄</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+            
+            <div class="glass-card rounded-2xl overflow-hidden group">
+                <div class="h-80 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=1000" alt="Cleanroom" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                </div>
+                <div class="p-8">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="material-symbols-outlined text-primary">filter_alt</span>
+                        <h3 class="text-2xl font-bold text-on-surface">半導體無塵室 (Cleanroom)</h3>
+                    </div>
+                    <p class="text-on-surface-variant leading-relaxed">
+                        精密氣流控制與微粒過濾系統，確保生產環境符合 ISO 高標準潔淨度要求，維持產線良率。
+                    </p>
                 </div>
             </div>
+
+            <div class="glass-card rounded-2xl overflow-hidden group">
+                <div class="h-80 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1581094288338-2314dddb7bc3?auto=format&fit=crop&q=80&w=1000" alt="Chiller" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                </div>
+                <div class="p-8">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="material-symbols-outlined text-primary">ac_unit</span>
+                        <h3 class="text-2xl font-bold text-on-surface">大型冰水主機 (Chiller Unit)</h3>
+                    </div>
+                    <p class="text-on-surface-variant leading-relaxed">
+                        廠房動力心臟，提供穩定的冷卻水循環，是半導體製程與環境恆溫恆濕控制的核心基礎。
+                    </p>
+                </div>
+            </div>
+
         </div>
     </section>
 </main>
 
-<footer class="w-full py-12 mt-20 bg-[#10141a] border-t border-white/5 text-center">
-    <p class="text-slate-500 font-body text-sm tracking-wide">© 2026 工程專案紀錄. All Rights Reserved.</p>
+<footer class="w-full py-16 mt-20 border-t border-white/5 bg-[#0a0e14]">
+    <div class="max-w-7xl mx-auto px-8 text-center">
+        <p class="text-slate-500 font-body text-sm">© 2026 工程專案管理紀錄 | 技術導向架構</p>
+    </div>
 </footer>
 
 </body>
